@@ -59,7 +59,7 @@ body {
 }
 
 #home {
-    display: block;
+    display: none;
 }
 
 #avgActivity {
@@ -133,5 +133,71 @@ body {
 }
 
 #dayDetails {
-    display: none;
+    display: block;
+    width: 340px;
+    height: 555px;
+    background-color: #FFFFFF;
+    border-radius: 28px 28px 0px 0px;
+    /* fix for #dailySteps margin */
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+}
+
+#dailySteps {
+    width: 231px;
+    height: 231px;
+    border: 8px solid #00B6A3;
+    border-radius: 50%;
+    margin-top: 40px;
+}
+
+#dailySteps img {
+    background-color: rgba(0, 182, 164, 0.25);
+    padding: 7px;
+    border-radius: 50%;
+    margin-top: 28px;
+}
+
+#dailySteps>p {
+    font-size: 20px;
+    letter-spacing: 0.6px;
+}
+
+#dailySteps #numDailySteps {
+    font-size: 48px;
+    letter-spacing: 1.15px;
+    font-weight: bold;
+}
+#message>p:first-child{
+    font-size: 20px;
+    letter-spacing: 0.6px;
+    margin-top: 30px;    
+}
+#message>p:nth-child(2){
+    font-size: 40px;
+    letter-spacing: 0.96px;
+    font-weight: bold;   
+}
+#dayDetails>table{
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+#dayDetails>table th{
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0.54px;
+    color: #B3B3B3;
+    border-left: 1px solid #B3B3B3; 
+}
+#dayDetails>table td{
+    font-size: 40px;
+    letter-spacing: 0.96px;
+    color: #00B6A3;
+    font-weight: bold;
+    border-left: 1px solid #B3B3B3;  
+     
 }
