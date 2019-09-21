@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+    margin: auto;
+}
+
+body {
+    position: relative;
+    max-width: 375px;
+    height: 812px;
+    /* for browsers that don't support gradient */
+    background-color: #34C7A0;
+    background-image: linear-gradient(152deg, #34C7A0, #008AA2);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#title {
+    background-color: #FFFFFF;
+    border-radius: 28px;
+    width: 340px;
+    height: 117px;
+    margin-top: 20px;
+}
+
+#title>h2 {
+    color: #00B6A3;
+    font-size: 34px;
+    letter-spacing: 0.48px;
+    font-weight: bold;
+    padding: 24px 0px 0px 27px;
+}
+
+#title>p {
+    color: #898694;
+    font-size: 16px;
+    letter-spacing: 0.24px;
+    font-weight: 500;
+    padding: 10px 0px 0px 27px;
+}
+
+#week {
+    display: flex;
+    flex-flow: row, nowrap;
+    margin: 25px auto;
+    width: 340px;
+}
+
+.day {
+    height: 60px;
+    width: 60px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 23px;
+    text-align: center;
+    font-size: 16px;
+    color: #FFFFFF;
+    opacity: 0.7;
+    letter-spacing: 0.24px;
+    padding: 11px;
+    font-weight: 500;
+}
+
+#home {
+    display: block;
+}
+
+#avgActivity {
+    width: 340px;
+    height: 184px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 28px;
+}
+
+#home table {
+    padding: 25px 0px 0px 27px;
+    float: left;
+}
+
+#home table td {
+    color: white;
+    padding-left: 15px;
+    font-weight: 500;
+}
+
+/* fist row */
+
+#home table tr:first-child td {
+    font-size: 20px;
+    letter-spacing: 0.48px;
+}
+
+/* second row */
+
+#home table tr:nth-child(2) td {
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    opacity: 0.7;
+}
+
+/* sets all images in home div */
+
+#home img {
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 7px;
+    border-radius: 50%;
+}
+
+#avgTime {
+    text-align: center;
+    padding-top: 20px;
+    clear: both;
+}
+
+/* same style for all data*/
+
+#avgTime, #totalSteps, #numOfCalories {
+    font-size: 38px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 0.91;
+}
+
+#totalSteps, #calBurned {
+    width: 340px;
+    height: 93px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 28px;
+    margin: 25px auto;
+}
+
+#numOfSteps, #numOfCalories {
+    float: right;
+    line-height: 93px;
+    padding-right: 30px;
+}
+
+#dayDetails {
+    display: none;
+}
