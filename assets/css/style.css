@@ -28,7 +28,12 @@ body {
     width: 40px;
     height: 40px;
     float: left;
-    margin: 40px 0px 40px 0px;    
+    margin: 40px 0px 40px 0px;
+}
+
+#backBtn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
 }
 
 #title {
@@ -36,7 +41,7 @@ body {
     font-size: 34px;
     letter-spacing: 0.48px;
     font-weight: bold;
-    padding: 24px 0px 0px 27px;
+    padding: 24px 24px 0px 27px;
     float: left;
 }
 
@@ -45,16 +50,20 @@ body {
     font-size: 16px;
     letter-spacing: 0.24px;
     font-weight: 500;
-    padding: 10px 0px 0px 27px;
+    padding: 10px 27px 0px 27px;
     float: left;
 }
+
 /* style for changing opacity of header element */
-.lowOpacity{
-    background-color: rgba(255, 255, 255, 0.25) !important;    
+
+.lowOpacity {
+    background-color: rgba(255, 255, 255, 0.25) !important;
 }
-.whiteText{
+
+.whiteText {
     color: #FFFFFF !important;
 }
+
 #week {
     display: flex;
     flex-flow: row, nowrap;
@@ -76,8 +85,19 @@ body {
     font-weight: 500;
 }
 
+.day:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+.dayActive{
+    background-color: rgba(255, 255, 255, 1) !important;
+    color: #00B6A3 !important;
+}
+
+/*             Data review for the whole week                     */
+
 #home {
-    display: none;
+    display: block;
 }
 
 #avgActivity {
@@ -151,8 +171,10 @@ body {
     padding-right: 30px;
 }
 
+/*            Detailed information about one day               */
+
 #dayDetails {
-    display: block;
+    display: none;
     width: 340px;
     height: 555px;
     background-color: #FFFFFF;
@@ -189,13 +211,13 @@ body {
     font-weight: bold;
 }
 
-#message>p:first-child {
+#message1 {
     font-size: 20px;
     letter-spacing: 0.6px;
     margin-top: 30px;
 }
 
-#message>p:nth-child(2) {
+#message2 {
     font-size: 40px;
     letter-spacing: 0.96px;
     font-weight: bold;
@@ -214,6 +236,7 @@ body {
     letter-spacing: 0.54px;
     color: #B3B3B3;
     border-left: 1px solid #B3B3B3;
+    width: 33%;
 }
 
 #dayDetails>table td {
