@@ -28,7 +28,7 @@ body {
     width: 40px;
     height: 40px;
     float: left;
-    margin: 40px 0px 40px 0px;
+    margin: 40px 0px 40px 0px;    
 }
 
 #title {
@@ -48,7 +48,13 @@ body {
     padding: 10px 0px 0px 27px;
     float: left;
 }
-
+/* style for changing opacity of header element */
+.lowOpacity{
+    background-color: rgba(255, 255, 255, 0.25) !important;    
+}
+.whiteText{
+    color: #FFFFFF !important;
+}
 #week {
     display: flex;
     flex-flow: row, nowrap;
@@ -71,7 +77,7 @@ body {
 }
 
 #home {
-    display: block;
+    display: none;
 }
 
 #avgActivity {
@@ -146,7 +152,7 @@ body {
 }
 
 #dayDetails {
-    display: none;
+    display: block;
     width: 340px;
     height: 555px;
     background-color: #FFFFFF;
