@@ -89,7 +89,8 @@ body {
     opacity: 1;
     cursor: pointer;
 }
-.dayActive{
+
+.dayActive {
     background-color: rgba(255, 255, 255, 1) !important;
     color: #00B6A3 !important;
 }
@@ -97,6 +98,7 @@ body {
 /*             Data review for the whole week                     */
 
 #home {
+    position: relative;
     display: block;
 }
 

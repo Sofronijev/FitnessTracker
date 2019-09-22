@@ -61,7 +61,7 @@ function showDetailedInfo(selectedDate) {
     const day = createDate.getDay();
     const dayDate = createDate.getDate();
     const month = createDate.getMonth();
-    const year = createDate.getFullYear();    
+    const year = createDate.getFullYear();
 
     //shows back button and detailed information about one day
     document.getElementById("backBtn").style.display = "block";
