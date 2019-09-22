@@ -13,7 +13,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#title {
+#header {
     background-color: #FFFFFF;
     border-radius: 28px;
     width: 340px;
@@ -21,20 +21,32 @@ body {
     margin-top: 20px;
 }
 
-#title>h2 {
+/* used float:left to align back button and text in header */
+
+#backBtn {
+    display: none;
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin: 40px 0px 40px 0px;
+}
+
+#title {
     color: #00B6A3;
     font-size: 34px;
     letter-spacing: 0.48px;
     font-weight: bold;
     padding: 24px 0px 0px 27px;
+    float: left;
 }
 
-#title>p {
+#subtitle {
     color: #898694;
     font-size: 16px;
     letter-spacing: 0.24px;
     font-weight: 500;
     padding: 10px 0px 0px 27px;
+    float: left;
 }
 
 #week {
@@ -50,7 +62,7 @@ body {
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 23px;
     text-align: center;
-    font-size: 16px;
+    font-size: 17px;
     color: #FFFFFF;
     opacity: 0.7;
     letter-spacing: 0.24px;
@@ -59,7 +71,7 @@ body {
 }
 
 #home {
-    display: none;
+    display: block;
 }
 
 #avgActivity {
@@ -101,6 +113,7 @@ body {
     background-color: rgba(255, 255, 255, 0.25);
     padding: 7px;
     border-radius: 50%;
+    color: #FFFFFF;
 }
 
 #avgTime {
@@ -111,14 +124,14 @@ body {
 
 /* same style for all data*/
 
-#avgTime, #totalSteps, #numOfCalories {
+#avgTime, #totalSteps, #numOfCalories, #avgKm {
     font-size: 38px;
     font-weight: bold;
     color: white;
-    letter-spacing: 0.91;
+    letter-spacing: 0.91px;
 }
 
-#totalSteps, #calBurned {
+#totalSteps, #calBurned, #avgDistance {
     width: 340px;
     height: 93px;
     background-color: rgba(255, 255, 255, 0.25);
@@ -126,14 +139,14 @@ body {
     margin: 25px auto;
 }
 
-#numOfSteps, #numOfCalories {
+#numOfSteps, #numOfCalories, #avgKm {
     float: right;
     line-height: 93px;
     padding-right: 30px;
 }
 
 #dayDetails {
-    display: block;
+    display: none;
     width: 340px;
     height: 555px;
     background-color: #FFFFFF;
@@ -169,35 +182,38 @@ body {
     letter-spacing: 1.15px;
     font-weight: bold;
 }
-#message>p:first-child{
+
+#message>p:first-child {
     font-size: 20px;
     letter-spacing: 0.6px;
-    margin-top: 30px;    
+    margin-top: 30px;
 }
-#message>p:nth-child(2){
+
+#message>p:nth-child(2) {
     font-size: 40px;
     letter-spacing: 0.96px;
-    font-weight: bold;   
+    font-weight: bold;
 }
-#dayDetails>table{
+
+#dayDetails>table {
     position: absolute;
     bottom: 30px;
     width: 100%;
     border-collapse: collapse;
-    
 }
-#dayDetails>table th{
+
+#dayDetails>table th {
     font-size: 18px;
     font-weight: normal;
     letter-spacing: 0.54px;
     color: #B3B3B3;
-    border-left: 1px solid #B3B3B3; 
+    border-left: 1px solid #B3B3B3;
 }
-#dayDetails>table td{
+
+#dayDetails>table td {
     font-size: 40px;
     letter-spacing: 0.96px;
     color: #00B6A3;
     font-weight: bold;
-    border-left: 1px solid #B3B3B3;  
-     
+    border-left: 1px solid #B3B3B3;
 }

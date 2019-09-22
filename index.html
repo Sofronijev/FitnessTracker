@@ -12,9 +12,10 @@
 </head>
 
 <body>
-    <div id="title">
-        <h2>Welcome!</h2>
-        <p>Overview of your activity</p>
+    <div id="header">
+        <img id="backBtn" src="assets/img/icons/chevron_left-24px.svg" alt="back button">
+        <h2 id="title"></h2>
+        <p id="subtitle"></p>
     </div>
     <div id="week">
         <div class="day">4 MON</div>
@@ -35,7 +36,7 @@
                     <td>Average</td>
                 </tr>
             </table>
-            <p id="avgTime">6h 40min</p>
+            <p id="avgTime"></p>
         </div>
         <div id="totalSteps">
             <table>
@@ -47,7 +48,7 @@
                     <td>Total</td>
                 </tr>
             </table>
-            <p id="numOfSteps"> 7,540</p>
+            <p id="numOfSteps"></p>
         </div>
         <div id="calBurned">
             <table>
@@ -60,6 +61,18 @@
                 </tr>
             </table>
             <p id="numOfCalories">340</p>
+        </div>
+        <div id="avgDistance">
+            <table>
+                <tr>
+                    <th rowspan="2"><img src="assets/img/icons/navigation-24px.svg" alt="calories"></th>
+                    <td>Distance</td>
+                </tr>
+                <tr>
+                    <td>Average (km)</td>
+                </tr>
+            </table>
+            <p id="avgKm"></p>
         </div>
     </div>
 
@@ -75,15 +88,21 @@
         </div>
         <table>
             <tr>
-                <th>km</th><th>cal</th><th>hours</th>
+                <th>km</th>
+                <th>cal</th>
+                <th>hours</th>
             </tr>
             <tr>
-                <td id="km">4.2</td><td id="cal">315</td><td id="hours">4</td>
+                <td id="km">4.2</td>
+                <td id="cal">315</td>
+                <td id="hours">4</td>
             </tr>
 
         </table>
 
     </div>
+    <script src="assets/js/fitness-functions.js"></script>
+    <script src="assets/js/fitness-app.js"></script>
 </body>
 
 </html>
