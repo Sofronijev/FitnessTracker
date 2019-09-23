@@ -7,15 +7,6 @@
     }
 }
 
-@keyframes slideOut {
-    0% {
-        top: 0;
-    }
-    100% {
-        top: 100%;
-    }
-}
-
 @keyframes slideLeft {
     0% {
         right: 100%;
@@ -33,10 +24,4 @@
 .slideIn {
     animation-name: slideIn;
     animation-duration: 0.4s;
-}
-
-.slideOut {
-    animation-name: slideOut;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
 }
