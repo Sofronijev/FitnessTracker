@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -13,28 +13,28 @@
 </head>
 
 <body>
-    <div id="header">
+    <div class="whiteBg" id="header">
         <img id="backBtn" src="assets/img/icons/chevron_left-24px.svg" alt="back button">
         <h2 id="title"></h2>
         <p id="subtitle"></p>
     </div>
     <div id="week">
-        <div class="day"></div>
-        <div class="day"></div>
-        <div class="day"></div>
-        <div class="day"></div>
-        <div class="day"></div>
+        <div class="day lowOpacity"></div>
+        <div class="day lowOpacity"></div>
+        <div class="day lowOpacity"></div>
+        <div class="day lowOpacity"></div>
+        <div class="day lowOpacity"></div>
     </div>
-
+<!--                              Data review for the whole week                            -->
     <div id="home">
-        <div id="avgActivity">
+        <div class="lowOpacity" id="avgActivity">
             <table>
                 <tr>
                     <th rowspan="2"><img src="assets/img/icons/timer-24px.svg" alt="timer"></th>
-                    <td>Activity</td>
+                    <td class="firstRow">Activity</td>
                 </tr>
                 <tr>
-                    <td>Average</td>
+                    <td class="secondRow">Average</td>
                 </tr>
             </table>
             <p id="avgTime"></p>
@@ -43,10 +43,10 @@
             <table>
                 <tr>
                     <th rowspan="2"><img src="assets/img/icons/directions_run-24px.svg" alt="run"></th>
-                    <td>Steps</td>
+                    <td class="firstRow">Steps</td>
                 </tr>
                 <tr>
-                    <td>Total</td>
+                    <td class="secondRow">Total</td>
                 </tr>
             </table>
             <p id="numOfSteps"></p>
@@ -55,10 +55,10 @@
             <table>
                 <tr>
                     <th rowspan="2"><img src="assets/img/icons/whatshot-24px.svg" alt="calories"></th>
-                    <td>Calories</td>
+                    <td class="firstRow">Calories</td>
                 </tr>
                 <tr>
-                    <td>Total Burned</td>
+                    <td class="secondRow">Total Burned</td>
                 </tr>
             </table>
             <p id="numOfCalories">340</p>
@@ -67,34 +67,37 @@
             <table>
                 <tr>
                     <th rowspan="2"><img src="assets/img/icons/navigation-24px.svg" alt="calories"></th>
-                    <td>Distance</td>
+                    <td class="firstRow">Distance</td>
                 </tr>
                 <tr>
-                    <td>Average (km)</td>
+                    <td class="secondRow">Average (km)</td>
                 </tr>
             </table>
             <p id="avgKm"></p>
         </div>
     </div>
+    <!--                              Data review for the whole week                            -->
 
-    <div id="dayDetails">
+    <!--                            Detailed information about one day                           -->
+
+    <div class="whiteBg" id="dayDetails">
         <div id="dailySteps">
             <img src="assets/img/icons/directions_run-24px.svg" alt="run">
             <p>Steps</p>
             <div id="numDailySteps"></div>
         </div>
 
-        <p id="message1">Very good</p>
-        <p id="message2">Keep going!</p>
+        <p id="message1"></p>
+        <p id="message2"></p>
 
-        <table>
+        <table class="detailsTable">
             <tr>
-                <th>km</th>
+                <th class="noBorder">km</th>
                 <th>cal</th>
                 <th>hours</th>
             </tr>
             <tr>
-                <td id="km"></td>
+                <td class="noBorder" id="km"></td>
                 <td id="cal"></td>
                 <td id="hours"></td>
             </tr>
@@ -102,6 +105,9 @@
         </table>
 
     </div>
+
+    <!--                            Detailed information about one day                           -->
+    
     <script src="assets/js/fitness-functions.js"></script>
     <script src="assets/js/fitness-app.js"></script>
 </body>

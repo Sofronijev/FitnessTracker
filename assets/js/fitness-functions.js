@@ -5,15 +5,15 @@ function showHomeScreen() {
     document.getElementById("dayDetails").style.display = "none";
     //removes class for lower opacity of header element
     document.getElementById("header").classList.remove("lowOpacity");
-    //change title font color
+    //changes title font color
     document.getElementById("title").classList.remove("whiteText");
-    //change subtitle font color and opacity
+    //changes subtitle font color and opacity
     document.getElementById("subtitle").classList.remove("whiteText");
-    //change opacity of subtitle
+    //changes opacity of subtitle
     document.getElementById("subtitle").style.opacity = "1";
-    // show review for the whole week
+    //shows review for the whole week
     document.getElementById("home").style.display = "block";
-    //Set text in header
+    //sets text in header
     document.getElementById("title").textContent = "Welcome!";
     document.getElementById("subtitle").textContent = "Overview of your activity";
 
@@ -31,15 +31,15 @@ function showHomeScreen() {
                 stepsNum += data.steps;
             });
 
-            // calculating average time spent on activity during week (5 days)
+            //calculating average time spent on activity during week (5 days)
             let avgSeconds = Math.round((stepsNum * 0.5) / 5);
             let hours = Math.floor(avgSeconds / 3600);
             let minutes = Math.round((avgSeconds % 3600) / 60);
-            // Calculating average distance in km with 2 decimal places for 5 days
+            //calculating average distance in km with 2 decimal places for 5 days
             let avgDistance = (stepsNum * 0.762 / 1000 / 5).toFixed(2);
             //adds average time spent on activity during week (5 days)
             document.getElementById("avgTime").textContent = `${hours}h ${minutes}min`;
-            // adds total number of steps to the screen, toLocaleString adds comma to number
+            //adds total number of steps to the screen, toLocaleString adds comma to number
             document.getElementById("numOfSteps").textContent = stepsNum.toLocaleString();
             //adds total number of burned calories to the screen
             document.getElementById("numOfCalories").textContent = Math.round(stepsNum * 0.05);
@@ -54,9 +54,30 @@ function showHomeScreen() {
 
 function showDetailedInfo(selectedDate) {
 
-    const daysInWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    // create date object from selected date
+    const daysInWeek = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
+    const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
+    //creates date object from selected date
     const createDate = new Date(selectedDate);
     const day = createDate.getDay();
     const dayDate = createDate.getDate();
@@ -73,9 +94,9 @@ function showDetailedInfo(selectedDate) {
     //change subtitle font color and opacity
     document.getElementById("subtitle").classList.add("whiteText");
     document.getElementById("subtitle").style.opacity = "0.7";
-    // hide review for the whole week
+    //hide review for the whole week
     document.getElementById("home").style.display = "none";
-    //Set text in header
+    //set text in header
     document.getElementById("title").textContent = daysInWeek[day];
     document.getElementById("subtitle").textContent = `${months[month]} ${dayDate}, ${year}.`;
 
@@ -88,10 +109,12 @@ function showDetailedInfo(selectedDate) {
             //gets JSON data
             let data = JSON.parse(this.response);
 
+            let message1 = document.getElementById("message1");
+            let message2 = document.getElementById("message2");
             let stepsNum = 0;
             data.forEach(data => {
                 let date = new Date(data.timestamp);
-                // finds selected date in JSON and calculates total number of steps for that day
+                //finds selected date in JSON and calculates total number of steps for that day
                 if (selectedDate === date.toDateString()) {
                     stepsNum += data.steps;
                 }
@@ -111,6 +134,21 @@ function showDetailedInfo(selectedDate) {
             document.getElementById("cal").textContent = Math.round(stepsNum * 0.05);
             //writes total time spent on physical activity
             document.getElementById("hours").textContent = `${hours}:${minutes}`;
+
+            //changes messages on the screen depending on number of steps
+            if (stepsNum >= 4000) {
+                message1.textContent = "Excellent";
+                message2.textContent = "Great job!";
+            } else if (stepsNum >= 3000) {
+                message1.textContent = "Very good!";
+                message2.textContent = "Keep going!";
+            } else if (stepsNum >= 2000) {
+                message1.textContent = "Not bad";
+                message2.textContent = "You can do better";
+            } else {
+                message1.textContent = "Come on";
+                message2.textContent = "Move it!";
+            }
         }
     }
     request.send();

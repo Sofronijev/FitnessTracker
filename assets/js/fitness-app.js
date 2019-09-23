@@ -1,8 +1,9 @@
 //get all information when app starts
 showHomeScreen();
-//calculates last 5 days and shows them on screen
+//calculates last 5 days and shows them on the screen
 last5Days();
 
+//clicking on any day will show detailed information about that day
 document.getElementById("week").addEventListener("click", function (ev) {
     let clickedElement = ev.target;
     //we are looking for element with data-date
@@ -18,7 +19,7 @@ document.getElementById("week").addEventListener("click", function (ev) {
         document.getElementById("home").classList.remove("slideLeft");
     }
 });
-
+//clicking on back button will return to home screen
 document.getElementById("backBtn").addEventListener("click", function () {
     let days = document.querySelectorAll(".day");
     days.forEach(day => {
