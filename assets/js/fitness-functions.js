@@ -47,7 +47,7 @@ function showHomeScreen() {
             document.getElementById("avgKm").textContent = avgDistance;
 
         }
-    }
+    };
     request.send();
 }
 
@@ -79,6 +79,7 @@ function showDetailedInfo(selectedDate) {
     ];
     //creates date object from selected date
     const createDate = new Date(selectedDate);
+    //gets information about created date
     const day = createDate.getDay();
     const dayDate = createDate.getDate();
     const month = createDate.getMonth();
@@ -89,14 +90,14 @@ function showDetailedInfo(selectedDate) {
     document.getElementById("dayDetails").style.display = "block";
     //lowers opacity of header element
     document.getElementById("header").classList.add("lowOpacity");
-    //change title font color
+    //changes title font color
     document.getElementById("title").classList.add("whiteText");
-    //change subtitle font color and opacity
+    //changes subtitle font color and opacity
     document.getElementById("subtitle").classList.add("whiteText");
     document.getElementById("subtitle").style.opacity = "0.7";
-    //hide review for the whole week
+    //hides home screen
     document.getElementById("home").style.display = "none";
-    //set text in header
+    //sets text in header
     document.getElementById("title").textContent = daysInWeek[day];
     document.getElementById("subtitle").textContent = `${months[month]} ${dayDate}, ${year}.`;
 
@@ -150,7 +151,7 @@ function showDetailedInfo(selectedDate) {
                 message2.textContent = "Move it!";
             }
         }
-    }
+    };
     request.send();
 }
 
