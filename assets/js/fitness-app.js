@@ -3,12 +3,14 @@ showHomeScreen();
 //calculates last 5 days and shows them on the screen
 last5Days();
 
+
 //clicking on any day will show detailed information about that day
 document.getElementById("week").addEventListener("click", function (ev) {
     let clickedElement = ev.target;
     //we are looking for element with data-date
     if (clickedElement.hasAttribute("data-date")) {
         let date = clickedElement.getAttribute("data-date");
+        //function for showing detailed info screen
         showDetailedInfo(date);
         //removes "active" state from day
         let days = document.querySelectorAll(".day");
@@ -17,9 +19,8 @@ document.getElementById("week").addEventListener("click", function (ev) {
         });
         //changes background to look "active"
         clickedElement.classList.add("dayActive");
-        //classes for animation
-        document.getElementById("dayDetails").classList.add("slideIn");
-        document.getElementById("home").classList.remove("slideLeft");
+        //adds history state
+        history.pushState({ date }, "", `${date}`);
     }
 });
 //clicking on back button will return to home screen
@@ -29,10 +30,28 @@ document.getElementById("backBtn").addEventListener("click", function () {
     days.forEach(day => {
         day.classList.remove("dayActive");
     });
-    //classes for animation
-    document.getElementById("dayDetails").classList.remove("slideIn");
-    document.getElementById("home").classList.add("slideLeft");
-
     showHomeScreen();
+    //add location to history
+    history.pushState(null, "", `./`);
 });
 
+window.addEventListener("popstate", ev => {
+    if (ev.state !== null) {
+        showDetailedInfo(ev.state.date);
+        let days = document.querySelectorAll(".day");
+        days.forEach(day => {
+            day.classList.remove("dayActive");
+            if (day.getAttribute("data-date") === ev.state.date) {
+                //changes background to look "active"
+                day.classList.add("dayActive");
+            }
+        });
+    } else {
+        showHomeScreen();
+        //removes "active" state from day
+        let days = document.querySelectorAll(".day");
+        days.forEach(day => {
+            day.classList.remove("dayActive");
+        });
+    }
+});

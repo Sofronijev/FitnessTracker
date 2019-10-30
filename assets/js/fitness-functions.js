@@ -16,7 +16,13 @@ function showHomeScreen() {
     //sets text in header
     document.getElementById("title").textContent = "Welcome!";
     document.getElementById("subtitle").textContent = "Overview of your activity";
-
+	
+	//classes for animation
+	// if stops animation from starting when opening page for first time
+	if(document.getElementById("dayDetails").classList.contains("slideIn")){
+    document.getElementById("dayDetails").classList.remove("slideIn");
+    document.getElementById("home").classList.add("slideLeft");
+		}
     let request = new XMLHttpRequest();
 
     request.open("GET", "https://api.myjson.com/bins/1gwnal", true);
@@ -100,6 +106,9 @@ function showDetailedInfo(selectedDate) {
     //sets text in header
     document.getElementById("title").textContent = daysInWeek[day];
     document.getElementById("subtitle").textContent = `${months[month]} ${dayDate}, ${year}.`;
+	//classes for animation
+	document.getElementById("dayDetails").classList.add("slideIn");
+    document.getElementById("home").classList.remove("slideLeft");
 
     let request = new XMLHttpRequest();
 
@@ -173,4 +182,6 @@ function last5Days() {
     }
 
 }
+
+
 
