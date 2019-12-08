@@ -20,7 +20,8 @@ document.getElementById("week").addEventListener("click", function (ev) {
         //changes background to look "active"
         clickedElement.classList.add("dayActive");
         //adds history state
-        history.pushState({ date }, "", `${date}`);
+        let clearDate = date.replace(/\s+/g, '');		
+        history.pushState({ date }, "", `${clearDate}`);
     }
 });
 //clicking on back button will return to home screen
