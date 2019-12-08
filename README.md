@@ -1,4 +1,4 @@
-# Fitness Tracker (Vanila JS)
+# Fitness Tracker (Vanila JS, HTML, CSS)
 
 The application consist of two screens
 
@@ -19,3 +19,6 @@ Detailed information about one day
  spent on physical activity
 
 Netlify link: https://milos-sofronijevic-fitnesstracker.netlify.com/
+
+## Screenshot
+![App screenshot](assets/img/screenshot/appscreens.png)
