@@ -16,22 +16,16 @@ function showHomeScreen() {
     //sets text in header
     document.getElementById("title").textContent = "Welcome!";
     document.getElementById("subtitle").textContent = "Overview of your activity";
-	
-	//classes for animation
-	// if stops animation from starting when opening page for first time
-	if(document.getElementById("dayDetails").classList.contains("slideIn")){
-    document.getElementById("dayDetails").classList.remove("slideIn");
-    document.getElementById("home").classList.add("slideLeft");
-		}
-    let request = new XMLHttpRequest();
 
-    request.open("GET", "https://api.myjson.com/bins/1gwnal", true);
-
-    request.onload = function () {
-        if (this.status >= 200 && this.status < 400) {
-            //gets JSON data
-            let data = JSON.parse(this.response);
-
+    //classes for animation
+    // if stops animation from starting when opening page for first time
+    if (document.getElementById("dayDetails").classList.contains("slideIn")) {
+        document.getElementById("dayDetails").classList.remove("slideIn");
+        document.getElementById("home").classList.add("slideLeft");
+    }
+    fetch('json.json')
+        .then(res => res.json())
+        .then(data => {
             let stepsNum = 0;
             data.forEach(data => {
                 stepsNum += data.steps;
@@ -51,10 +45,7 @@ function showHomeScreen() {
             document.getElementById("numOfCalories").textContent = Math.round(stepsNum * 0.05);
             //adds average distance to the screen          
             document.getElementById("avgKm").textContent = avgDistance;
-
-        }
-    };
-    request.send();
+        })
 }
 
 
@@ -106,18 +97,14 @@ function showDetailedInfo(selectedDate) {
     //sets text in header
     document.getElementById("title").textContent = daysInWeek[day];
     document.getElementById("subtitle").textContent = `${months[month]} ${dayDate}, ${year}.`;
-	//classes for animation
-	document.getElementById("dayDetails").classList.add("slideIn");
+    //classes for animation
+    document.getElementById("dayDetails").classList.add("slideIn");
     document.getElementById("home").classList.remove("slideLeft");
 
-    let request = new XMLHttpRequest();
 
-    request.open("GET", "https://api.myjson.com/bins/1gwnal", true);
-
-    request.onload = function () {
-        if (this.status >= 200 && this.status < 400) {
-            //gets JSON data
-            let data = JSON.parse(this.response);
+    fetch('json.json')
+        .then(res => res.json())
+        .then(data => {
 
             let message1 = document.getElementById("message1");
             let message2 = document.getElementById("message2");
@@ -159,9 +146,7 @@ function showDetailedInfo(selectedDate) {
                 message1.textContent = "Come on";
                 message2.textContent = "Move it!";
             }
-        }
-    };
-    request.send();
+        });
 }
 
 //calculates last 5 days and shows them on screen
